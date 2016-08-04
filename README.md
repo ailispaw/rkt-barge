@@ -49,12 +49,12 @@ Downloading sha256:20aa884e700 [=============================] 28.6 MB / 28.6 MB
 Downloading sha256:c286dd0e209 [=============================] 31.8 MB / 31.8 MB
 sha512-815a489042c5ce6e63ccf2584b22bc41
 [bargee@barge ~]$ rkt image list
-ID      NAME        IMPORT TIME LAST USED SIZE  LATEST
-sha512-815a489042c5 quay.io/zanui/nginx:latest  31 seconds ago  31 seconds ago  276MiB  true
+ID                      NAME                            IMPORT TIME     LAST USED       SIZE    LATEST
+sha512-815a489042c5     quay.io/zanui/nginx:latest      31 seconds ago  31 seconds ago  276MiB  true
 [bargee@barge ~]$ sudo start-stop-daemon -S -b --exec rkt -- --insecure-options=image run --port=80-tcp:8080 docker://quay.io/zanui/nginx
 [bargee@barge ~]$ rkt list
-UUID    APP IMAGE NAME      STATE CREATED   STARTED   NETWORKS
-21baf091  nginx quay.io/zanui/nginx:latest  running 3 seconds ago 3 seconds ago default:ip4=172.16.28.2
+UUID            APP     IMAGE NAME                              STATE   CREATED         STARTED         NETWORKS
+21baf091        nginx   quay.io/zanui/nginx:latest              running 3 seconds ago   3 seconds ago   default:ip4=172.16.28.2
 ```
 
 ```bash
@@ -64,9 +64,9 @@ $ open http://localhost:8080
 ```bash
 [bargee@barge ~]$ sudo rkt stop 21baf091
 [bargee@barge ~]$ rkt list
-UUID    APP IMAGE NAME      STATE CREATED   STARTED   NETWORKS
-21baf091  nginx quay.io/zanui/nginx:latest  exited  30 minutes ago  30 minutes ago
+UUID            APP     IMAGE NAME                              STATE   CREATED         STARTED         NETWORKS
+21baf091        nginx   quay.io/zanui/nginx:latest              exited  30 minutes ago  30 minutes ago
 [bargee@barge ~]$ sudo rkt rm 21baf091
 [bargee@barge ~]$ rkt list
-UUID  APP IMAGE NAME  STATE CREATED STARTED NETWORKS
+UUID    APP     IMAGE   NAME    STATE   CREATED STARTED NETWORKS
 ```
