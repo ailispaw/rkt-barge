@@ -39,10 +39,10 @@ Vagrant.configure(2) do |config|
 
   config.vm.provision :shell, run: "always" do |sh|
     sh.inline = <<-EOT
-      /etc/init.d/docker stop
-
       # Install acl on every boot, because it's not persistent
+      /etc/init.d/docker start
       pkg install acl
+      /etc/init.d/docker stop
 
       # Make rkt data persistent
       if [ ! -L /var/lib/rkt ]; then
