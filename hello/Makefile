@@ -43,7 +43,7 @@ clean:
 rktclean:
 	-sudo rkt stop `rkt list --no-legend | awk '{if ($$4 == "running") print $$1}'` >/dev/null 2>&1
 	-sudo rkt rm `rkt list --no-legend | awk '{print $$1}'` >/dev/null 2>&1
-	-sudo rkt image rm `rkt image list --fields=id --no-legend` >/dev/null 2>&1
+	-rkt image rm `rkt image list --fields=id --no-legend` >/dev/null 2>&1
 
 distclean: rktclean clean
 

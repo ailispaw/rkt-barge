@@ -8,7 +8,7 @@ module VagrantPlugins
   end
 end
 
-RKT_VERSION="v1.11.0"
+RKT_VERSION="v1.12.0"
 ACBUILD_VERSION="v0.3.1"
 GO_VERSION="1.6.3"
 
@@ -24,7 +24,7 @@ Vagrant.configure(2) do |config|
 
   config.vm.provision :shell do |sh|
     sh.inline = <<-EOT
-      # https://github.com/coreos/rkt/blob/master/Documentation/trying-out-rkt.md
+      # https://coreos.com/rkt/docs/latest/trying-out-rkt.html
 
       # Install rkt
       if [ ! -d /opt/rkt-#{RKT_VERSION} ]; then
@@ -33,10 +33,12 @@ Vagrant.configure(2) do |config|
         wget -qO- https://github.com/coreos/rkt/releases/download/#{RKT_VERSION}/rkt-#{RKT_VERSION}.tar.gz | tar xz
         cp /opt/rkt-#{RKT_VERSION}/rkt /opt/bin/
         cp /opt/rkt-#{RKT_VERSION}/bash_completion/rkt.bash /etc/bash_completion.d/rkt
+        sed -i 's/^getent/#getent/g' /opt/rkt-#{RKT_VERSION}/scripts/setup-data-dir.sh
 
         # Configure rkt group
         addgroup rkt
         addgroup bargee rkt
+        addgroup rkt-admin
       fi
 
       if [ ! -d /opt/acbuild-#{ACBUILD_VERSION} ]; then
