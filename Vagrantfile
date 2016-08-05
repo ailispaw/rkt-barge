@@ -13,7 +13,7 @@ ACBUILD_VERSION="v0.3.1"
 GO_VERSION="1.6.3"
 
 Vagrant.configure(2) do |config|
-  config.vm.define "vagga-barge"
+  config.vm.define "rkt-barge"
 
   config.vm.box = "ailispaw/barge"
 
