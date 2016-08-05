@@ -19,6 +19,21 @@ That's it.
 
 ## Hello World
 
+Cf.) https://coreos.com/rkt/docs/latest/getting-started-guide.html
+
+```bash
+$ vagrant ssh
+Welcome to Barge 2.1.8, Docker version 1.9.1, build 66c06d0-stripped
+[bargee@barge ~]$ cd /vagrant/hello
+[bargee@barge ~]$ make run
+[bargee@barge ~]$ wget -qO- http://localhost:5000
+hello
+```
+
+## Running Docker images with rkt
+
+Cf.) https://coreos.com/rkt/docs/latest/running-docker-images.html
+
 ```bash
 $ vagrant ssh
 Welcome to Barge 2.1.8, Docker version 1.9.1, build 66c06d0-stripped

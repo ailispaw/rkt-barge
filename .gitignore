@@ -3,3 +3,7 @@
 .vagrant/
 
 .ssh_config
+
+hello/*
+!hello/Makefile
+!hello/main.go
