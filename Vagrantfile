@@ -28,7 +28,7 @@ Vagrant.configure(2) do |config|
 
       # Install rkt
       if [ ! -d /opt/rkt-#{RKT_VERSION} ]; then
-        echo "Installing rkt"
+        echo "Installing rkt #{RKT_VERSION}"
         cd /opt
         wget -qO- https://github.com/coreos/rkt/releases/download/#{RKT_VERSION}/rkt-#{RKT_VERSION}.tar.gz | tar xz
         cp /opt/rkt-#{RKT_VERSION}/rkt /opt/bin/
@@ -42,14 +42,14 @@ Vagrant.configure(2) do |config|
       fi
 
       if [ ! -d /opt/acbuild-#{ACBUILD_VERSION} ]; then
-        echo "Installing acbuild"
+        echo "Installing acbuild #{ACBUILD_VERSION}"
         cd /opt
         wget -qO- https://github.com/appc/acbuild/releases/download/#{ACBUILD_VERSION}/acbuild-#{ACBUILD_VERSION}.tar.gz | tar xz
         cp /opt/acbuild-#{ACBUILD_VERSION}/acbuild /opt/bin/
       fi
 
       if [ ! -d /opt/go ]; then
-        echo "Installing go"
+        echo "Installing go v#{GO_VERSION}"
         cd /opt
         wget -qO- https://storage.googleapis.com/golang/go#{GO_VERSION}.linux-amd64.tar.gz | tar xz
         echo "export GOROOT=/opt/go" >> /home/bargee/.bash_profile
