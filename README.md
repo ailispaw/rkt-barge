@@ -23,7 +23,7 @@ Cf.) https://coreos.com/rkt/docs/latest/getting-started-guide.html
 
 ```bash
 $ vagrant ssh
-Welcome to Barge 2.1.8, Docker version 1.9.1, build 66c06d0-stripped
+Welcome to Barge 2.1.10, Docker version 1.9.1, build 66c06d0-stripped
 [bargee@barge ~]$ cd /vagrant/hello
 [bargee@barge ~]$ make run
 [bargee@barge ~]$ wget -qO- http://localhost:5000
@@ -36,7 +36,7 @@ Cf.) https://coreos.com/rkt/docs/latest/running-docker-images.html
 
 ```bash
 $ vagrant ssh
-Welcome to Barge 2.1.8, Docker version 1.9.1, build 66c06d0-stripped
+Welcome to Barge 2.1.10, Docker version 1.9.1, build 66c06d0-stripped
 [bargee@barge ~]$ rkt --insecure-options=image fetch docker://quay.io/zanui/nginx
 image: remote fetching from URL "docker://quay.io/zanui/nginx"
 Downloading sha256:d3b54b8677a [=============================] 71.3 KB / 71.3 KB

@@ -8,9 +8,9 @@ module VagrantPlugins
   end
 end
 
-RKT_VERSION="v1.12.0"
-ACBUILD_VERSION="v0.3.1"
-GO_VERSION="1.6.3"
+RKT_VERSION     = "v1.13.0"
+ACBUILD_VERSION = "v0.4.0"
+GO_VERSION      = "1.7"
 
 Vagrant.configure(2) do |config|
   config.vm.define "rkt-barge"
