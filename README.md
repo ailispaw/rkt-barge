@@ -25,8 +25,8 @@ Cf.) https://coreos.com/rkt/docs/latest/getting-started-guide.html
 $ vagrant ssh
 Welcome to Barge 2.1.10, Docker version 1.9.1, build 66c06d0-stripped
 [bargee@barge ~]$ cd /vagrant/hello
-[bargee@barge ~]$ make run
-[bargee@barge ~]$ wget -qO- http://localhost:5000
+[bargee@barge hello]$ make run
+[bargee@barge hello]$ wget -qO- http://localhost:5000
 hello
 ```
 
