@@ -44,7 +44,7 @@ Vagrant.configure(2) do |config|
       if [ ! -d /opt/acbuild-#{ACBUILD_VERSION} ]; then
         echo "Installing acbuild #{ACBUILD_VERSION}"
         cd /opt
-        wget -qO- https://github.com/appc/acbuild/releases/download/#{ACBUILD_VERSION}/acbuild-#{ACBUILD_VERSION}.tar.gz | tar xz
+        wget -qO- https://github.com/containers/build/releases/download/#{ACBUILD_VERSION}/acbuild-#{ACBUILD_VERSION}.tar.gz | tar xz
         cp /opt/acbuild-#{ACBUILD_VERSION}/acbuild /opt/bin/
       fi
 
