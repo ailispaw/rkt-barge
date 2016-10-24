@@ -36,9 +36,10 @@ Vagrant.configure(2) do |config|
         sed -i 's/^getent/#getent/g' /opt/rkt-#{RKT_VERSION}/scripts/setup-data-dir.sh
 
         # Configure rkt group
-        addgroup rkt
+        addgroup -S rkt
         addgroup bargee rkt
-        addgroup rkt-admin
+        addgroup -S rkt-admin
+        addgroup bargee rkt-admin
       fi
 
       if [ ! -d /opt/acbuild-#{ACBUILD_VERSION} ]; then
