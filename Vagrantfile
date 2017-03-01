@@ -8,7 +8,7 @@ module VagrantPlugins
   end
 end
 
-RKT_VERSION     = "v1.15.0"
+RKT_VERSION     = "v1.25.0"
 ACBUILD_VERSION = "v0.4.0"
 GO_VERSION      = "1.7.5"
 
@@ -81,6 +81,7 @@ Vagrant.configure(2) do |config|
       /opt/rkt-#{RKT_VERSION}/scripts/setup-data-dir.sh
       mkdir -p /usr/lib/rkt/stage1-images
       cp /opt/rkt-#{RKT_VERSION}/stage1-*.aci /usr/lib/rkt/stage1-images/
+      mount -t cgroup2 none /sys/fs/cgroup
     EOT
   end
 end
