@@ -16,6 +16,7 @@ Vagrant.configure(2) do |config|
   config.vm.define "rkt-barge"
 
   config.vm.box = "ailispaw/barge"
+  config.vm.box_version = ">= 2.4.0"
 
   config.vm.synced_folder ".", "/vagrant"
 
