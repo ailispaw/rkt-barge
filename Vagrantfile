@@ -10,7 +10,7 @@ end
 
 RKT_VERSION     = "v1.26.0"
 ACBUILD_VERSION = "v0.4.0"
-GO_VERSION      = "1.7.5"
+GO_VERSION      = "1.7.6"
 
 Vagrant.configure(2) do |config|
   config.vm.define "rkt-barge"
