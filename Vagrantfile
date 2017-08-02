@@ -8,7 +8,7 @@ module VagrantPlugins
   end
 end
 
-RKT_VERSION     = "v1.28.0"
+RKT_VERSION     = "v1.28.1"
 ACBUILD_VERSION = "v0.4.0"
 GO_VERSION      = "1.7.6"
 
@@ -66,6 +66,7 @@ Vagrant.configure(2) do |config|
     sh.inline = <<-EOT
       # Install extra packages on every boot, because it's not persistent
       /etc/init.d/docker start
+#      echo "VERSION=2.3.6" > /etc/default/pkg
       pkg install acl
       pkg install make
       /etc/init.d/docker stop
