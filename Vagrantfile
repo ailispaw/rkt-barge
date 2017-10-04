@@ -8,7 +8,7 @@ module VagrantPlugins
   end
 end
 
-RKT_VERSION     = "v1.28.1"
+RKT_VERSION     = "v1.29.0"
 ACBUILD_VERSION = "v0.4.0"
 GO_VERSION      = "1.7.6"
 
